@@ -1,0 +1,33 @@
+# Ignore compiled class files
+target/
+*.class
+
+# Ignore IDE files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore Maven specific files
+dependency-reduced-pom.xml
+
+# Ignore build files
+*.war
+*.jar
+*.ear
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+*~
+

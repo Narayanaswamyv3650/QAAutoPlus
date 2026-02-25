@@ -1,0 +1,63 @@
+================================================================================
+                    QA AUTO PLUS WEB APPLICATION
+                     Welcome to Your New Project!
+================================================================================
+
+Project Location: C:\Users\njonnala\Automation\WaterProject\qaautoplus
+
+QUICK START:
+------------
+1. Build:  Double-click "build.bat" OR run "mvn clean install"
+2. Start:  Double-click "start.bat" OR run "mvn jetty:run"
+3. Visit:  http://localhost:8080
+
+DOCUMENTATION:
+--------------
+- PROJECT-SUMMARY.md  - Complete project overview and creation summary
+- QUICKSTART.md       - Quick start guide for developers
+- README.md           - Full technical documentation
+
+SCRIPTS:
+--------
+- build.bat           - Build the project with Maven
+- start.bat           - Start the web application
+
+KEY FEATURES:
+-------------
+✓ Java 20 Web Application
+✓ REST API with JSON support
+✓ Modern responsive web interface
+✓ JUnit 5 testing framework
+✓ Selenium WebDriver integration
+✓ Maven build automation
+✓ Embedded Jetty server
+
+PROJECT STRUCTURE:
+------------------
+src/
+├── main/
+│   ├── java/          - Java source code
+│   ├── resources/     - Configuration files
+│   └── webapp/        - Web resources (HTML, CSS, JS)
+└── test/
+    └── java/          - Test cases
+
+USEFUL COMMANDS:
+----------------
+mvn clean install      - Build the project
+mvn test               - Run tests
+mvn jetty:run          - Start with Jetty
+mvn package            - Create WAR file
+
+API ENDPOINTS:
+--------------
+GET /api/status        - Check API status
+GET /api/info          - Get application info
+
+NEED HELP?
+----------
+Check the documentation files above or visit the source code with inline comments.
+
+Happy coding!
+================================================================================
+
