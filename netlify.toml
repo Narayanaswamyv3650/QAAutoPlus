@@ -1,0 +1,22 @@
+[build]
+  base = "src/main/webapp"
+  publish = "."
+  command = ""
+
+# Redirect root to the blog page
+[[redirects]]
+  from = "/"
+  to = "/blog/ai-automation-blog.html"
+  status = 302
+
+# Headers for caching static assets
+[[headers]]
+  for = "/blog/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/blog/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
