@@ -3,36 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoPulse — AI Updates for Automation Engineers</title>
+<title>AutomationPulse — AI Updates for Automation Engineers</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/ai-automation-blog.css">
 </head>
 <body>
 
 <nav>
-  <a href="#" class="logo">Auto<span>Pulse</span></a>
+  <a href="#" class="logo">Automation<span>Pulse</span></a>
   <ul class="nav-links">
     <li><a href="#featured">Latest</a></li>
     <li><a href="#posts">Articles</a></li>
     <li><a href="#write">Write</a></li>
-    <li><a href="#newsletter">Subscribe</a></li>
   </ul>
-  <button class="nav-btn" onclick="document.getElementById('write').scrollIntoView({behavior:'smooth'})">+ New Post</button>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" title="Toggle Black & White">◐</button>
+    <button class="nav-btn" onclick="document.getElementById('write').scrollIntoView({behavior:'smooth'})">+ New Post</button>
+  </div>
 </nav>
 
 <section class="hero">
-  <div class="hero-badge">
-    <div class="pulse-dot"></div>
-    Live Updates · Automation Engineering
-  </div>
   <h1>
     <em>AI Updates</em><br>
     <span class="line2">QA Engineers</span><br>
     Automation Engineer
   </h1>
-  <p class="hero-sub">
-    Stay ahead of the curve. Deep dives into LLMs, RPA, MLOps, AI agents, and the tools shaping tomorrow's automation stacks.
-  </p>
+  <p class="hero-sub">Deep dives into LLMs, RPA, MLOps, AI agents, and the tools shaping automation.</p>
   <div class="hero-actions">
     <a href="#featured" class="btn-primary">Explore Articles</a>
     <a href="#write" class="btn-outline">Contribute</a>
@@ -46,16 +42,8 @@
       <span class="stat-num">12K+</span>
       <span class="stat-label">Readers</span>
     </div>
-    <div class="stat">
-      <span class="stat-num">Weekly</span>
-      <span class="stat-label">Updates</span>
-    </div>
   </div>
 </section>
-
-<div class="ticker-wrap">
-  <div class="ticker" id="ticker"></div>
-</div>
 
 <main class="main">
 
@@ -65,12 +53,13 @@
         <div class="section-label">Featured</div>
         <div class="section-title">Top Stories</div>
       </div>
-      <a href="#posts" class="view-all">View all →</a>
     </div>
-    <div class="featured-grid" id="featuredGrid"></div>
+    <div class="featured-grid" id="featuredGrid">
+      <div class="loading-msg">Loading articles…</div>
+    </div>
   </section>
 
-  <section id="posts" style="margin-top:5rem;">
+  <section id="posts" style="margin-top:3rem;">
     <div class="section-header">
       <div>
         <div class="section-label">All Articles</div>
@@ -85,7 +74,9 @@
       <button class="cat-pill" onclick="filterPosts('devops',this)">MLOps</button>
       <button class="cat-pill" onclick="filterPosts('ml',this)">Computer Vision</button>
     </div>
-    <div class="blog-grid" id="blogGrid"></div>
+    <div class="blog-grid" id="blogGrid">
+      <div class="loading-msg">Loading articles…</div>
+    </div>
   </section>
 
   <section class="write-section" id="write">
@@ -94,21 +85,21 @@
     <form class="write-form" onsubmit="submitPost(event)">
       <div class="form-row">
         <div class="form-field">
-          <label>Your Name</label>
+          <label for="authorName">Your Name</label>
           <input type="text" id="authorName" placeholder="e.g. Anika Sharma" required>
         </div>
         <div class="form-field">
-          <label>Article Title</label>
+          <label for="postTitle">Article Title</label>
           <input type="text" id="postTitle" placeholder="e.g. LangChain Agents in Production" required>
         </div>
       </div>
       <div class="form-field">
-        <label>Excerpt / Subtitle</label>
-        <input type="text" id="postExcerpt" placeholder="One-line summary of your article..." required>
+        <label for="postExcerpt">Excerpt / Subtitle</label>
+        <input type="text" id="postExcerpt" placeholder="One-line summary…" required>
       </div>
       <div class="form-field">
-        <label>Content</label>
-        <textarea id="postContent" placeholder="Write your full article content here..." required></textarea>
+        <label for="postContent">Content</label>
+        <textarea id="postContent" placeholder="Write your full article content here…" required></textarea>
       </div>
       <div class="form-field">
         <label>Category</label>
@@ -126,26 +117,10 @@
     </form>
   </section>
 
-  <section class="newsletter" id="newsletter">
-    <h2>Stay in the <span>Loop</span></h2>
-    <p>Weekly digest of AI breakthroughs, tools, and tutorials. No noise — pure signal.</p>
-    <div class="nl-form">
-      <input type="email" placeholder="your@email.com">
-      <button onclick="this.textContent='✓ Subscribed!'">Subscribe</button>
-    </div>
-  </section>
-
 </main>
 
 <footer>
   <a href="#" class="logo">Auto<span>Pulse</span></a>
-  <ul class="footer-links">
-    <li><a href="#">About</a></li>
-    <li><a href="#">Archive</a></li>
-    <li><a href="#">RSS</a></li>
-    <li><a href="#">GitHub</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
   <span class="footer-copy">© 2025 AutoPulse. Built for engineers.</span>
 </footer>
 

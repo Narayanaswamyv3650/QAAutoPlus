@@ -6,6 +6,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import com.qaautoplus.servlets.HomeServlet;
 import com.qaautoplus.servlets.ApiServlet;
+import com.qaautoplus.db.DatabaseConfig;
 
 import java.net.URL;
 import java.nio.file.Files;
@@ -44,6 +45,9 @@ public class Main {
         }
 
         Server server = new Server(port);
+
+        // Initialize Neon PostgreSQL database
+        DatabaseConfig.initialize();
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
