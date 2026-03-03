@@ -29,14 +29,15 @@ body.bw .blog-card:hover { background: #13161e; }
 body.bw .modal { background: var(--surface); }
 body.bw .btn-primary { color: var(--bg); }
 body.bw .nav-btn { color: var(--bg); }
-body.bw .nl-form button { color: var(--bg); }
 
 /* ===== Reset ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
 body {
+  background: #ffffff;
   background: var(--bg);
+  color: #111111;
   color: var(--text);
   font-family: 'Syne', sans-serif;
   min-height: 100vh;
@@ -291,11 +292,6 @@ nav {
 .tag-llm    { color: #00d2ff;        border-color: rgba(0,210,255,0.3);  background: rgba(0,210,255,0.06); }
 .tag-devops { color: var(--danger);  border-color: rgba(255,68,102,0.3); background: rgba(255,68,102,0.06); }
 
-body.bw .tag-ai, body.bw .tag-ml, body.bw .tag-rpa,
-body.bw .tag-llm, body.bw .tag-devops {
-  color: #333; border-color: #bbb; background: #eee;
-}
-
 .post-title {
   font-size: 1.2rem;
   font-weight: 800;
@@ -534,3 +530,4 @@ footer {
   .write-section { padding: 1.5rem; }
   footer { flex-direction: column; text-align: center; }
 }
+

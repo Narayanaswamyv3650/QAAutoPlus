@@ -141,15 +141,30 @@ async function submitPost(e) {
   }
 }
 
-/* ---- B&W Theme Toggle ---- */
+/* ---- Dark Theme Toggle ---- */
 function initThemeToggle() {
   const btn = document.getElementById('themeToggle');
+
+  // Clear any stale old theme values from previous code versions
   const saved = localStorage.getItem('theme');
-  if (saved === 'bw') document.body.classList.add('bw');
+  if (saved && saved !== 'dark' && saved !== 'light') {
+    localStorage.removeItem('theme');
+  }
+
+  // Remove inline style attribute so CSS takes over
+  document.body.removeAttribute('style');
+
+  // Default is always light/white (no 'bw' class).
+  // Only apply dark mode if user explicitly chose 'dark'.
+  document.body.classList.remove('bw');
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('bw');
+  }
 
   btn.addEventListener('click', () => {
     document.body.classList.toggle('bw');
-    localStorage.setItem('theme', document.body.classList.contains('bw') ? 'bw' : 'dark');
+    const isDark = document.body.classList.contains('bw');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 }
 

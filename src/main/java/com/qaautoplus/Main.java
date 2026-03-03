@@ -89,23 +89,23 @@ public class Main {
 
     /**
      * Finds the webapp resource base in order of preference:
-     *  1. "webapp/" on the classpath  (inside the fat-jar)
-     *  2. src/main/webapp             (local development)
+     *  1. src/main/webapp             (local development – live edits)
+     *  2. "webapp/" on the classpath  (inside the fat-jar / cloud)
      */
     private static String resolveResourceBase() {
-        // 1. Classpath (fat-jar / cloud)
-        URL classpathUrl = Main.class.getClassLoader().getResource("webapp/");
-        if (classpathUrl != null) {
-            System.out.println("  Serving static files from classpath: " + classpathUrl);
-            return classpathUrl.toExternalForm();
-        }
-
-        // 2. Local dev – relative to working directory
+        // 1. Local dev – relative to working directory (preferred for live editing)
         Path localWebapp = Path.of("src/main/webapp");
         if (Files.isDirectory(localWebapp)) {
             String abs = localWebapp.toAbsolutePath().toString();
             System.out.println("  Serving static files from local path: " + abs);
             return abs;
+        }
+
+        // 2. Classpath (fat-jar / cloud)
+        URL classpathUrl = Main.class.getClassLoader().getResource("webapp/");
+        if (classpathUrl != null) {
+            System.out.println("  Serving static files from classpath: " + classpathUrl);
+            return classpathUrl.toExternalForm();
         }
 
         System.err.println("  WARNING: No webapp resource directory found!");

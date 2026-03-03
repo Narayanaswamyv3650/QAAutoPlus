@@ -6,8 +6,23 @@
 <title>AutomationPulse — AI Updates for Automation Engineers</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/ai-automation-blog.css">
+<style>
+  /* Inline fallback: guarantee white background on first load */
+  body { background: #ffffff !important; color: #111111 !important; }
+  body.bw { background: #0a0c10 !important; color: #e8eaf0 !important; }
+</style>
+<script>
+  // Clear any stale theme from old versions so default is always white
+  (function() {
+    var t = localStorage.getItem('theme');
+    if (t && t !== 'dark' && t !== 'light') localStorage.removeItem('theme');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.className = 'dark-requested';
+    }
+  })();
+</script>
 </head>
-<body>
+<body style="background:#ffffff;color:#111111;">
 
 <nav>
   <a href="#" class="logo">Automation<span>Pulse</span></a>
