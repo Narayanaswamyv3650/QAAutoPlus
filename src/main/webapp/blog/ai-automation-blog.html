@@ -3,152 +3,177 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutomationPulse — AI Updates for Automation Engineers</title>
+<title>AutomationPulse — AI News for QA Engineers</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/ai-automation-blog.css">
 <style>
-  /* Inline fallback: guarantee white background on first load */
-  body { background: #ffffff !important; color: #111111 !important; }
-  body.bw { background: #0a0c10 !important; color: #e8eaf0 !important; }
+/* ===== Theme ===== */
+:root{--bg:#fff;--surface:#f7f7f8;--border:#e0e0e0;--accent:#00b876;--accent2:#7b61ff;--text:#111;--muted:#666;--danger:#ff4466}
+body.bw{--bg:#0a0c10;--surface:#13161e;--border:#1e2230;--accent:#00ffa3;--accent2:#7b61ff;--text:#e8eaf0;--muted:#6b7080;--danger:#ff4466}
+
+/* ===== Reset ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Syne',sans-serif;min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
+
+/* ===== Nav ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:54px;background:var(--bg);border-bottom:1px solid var(--border);transition:background .3s}
+body.bw nav{background:rgba(10,12,16,.95)}
+.nav-brand{display:flex;align-items:center;gap:1rem}
+.logo{font-family:'Space Mono',monospace;font-size:1rem;font-weight:700;color:var(--accent);text-decoration:none;white-space:nowrap}
+.logo span{color:var(--text)}
+.nav-ctx{display:flex;flex-direction:column;gap:1px;border-left:2px solid var(--accent);padding-left:.8rem}
+.nav-ctx b{font-family:'Syne',sans-serif;font-size:.75rem;font-weight:700;color:var(--text)}
+.nav-ctx b em{font-style:normal;color:var(--accent)}
+.nav-ctx small{font-family:'Space Mono',monospace;font-size:.55rem;color:var(--muted)}
+.nav-right{display:flex;align-items:center;gap:.6rem}
+.theme-btn{background:0 0;border:1px solid var(--border);color:var(--text);font-size:1.1rem;width:34px;height:34px;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ===== Page ===== */
+.page{padding-top:54px}
+
+/* ===== Hero Banner ===== */
+.hero{display:flex;align-items:center;justify-content:center;min-height:280px;padding:3rem 2rem;background:linear-gradient(135deg,#0a0c10 0%,#111827 50%,#1a1a2e 100%);color:#fff;text-decoration:none;position:relative;overflow:hidden;cursor:pointer;transition:filter .3s}
+.hero:hover{filter:brightness(1.15)}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,255,163,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,163,.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.hero::after{content:'';position:absolute;top:-50%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(0,184,118,.15) 0%,transparent 70%);pointer-events:none}
+.hero-badge{position:absolute;top:1rem;left:1.5rem;font-family:'Space Mono',monospace;font-size:.6rem;font-weight:700;letter-spacing:.15em;padding:.25rem .6rem;background:#ff4466;color:#fff;border-radius:3px;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.hero-body{position:relative;z-index:1;text-align:center;max-width:700px}
+.hero-body h1{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:.6rem;background:linear-gradient(135deg,#fff 0%,#00ffa3 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-body p{color:rgba(255,255,255,.6);font-family:'Space Mono',monospace;font-size:.72rem;line-height:1.5}
+.hero-arrow{position:absolute;right:2rem;top:50%;transform:translateY(-50%);font-size:2.5rem;color:#00ffa3;opacity:.35;transition:opacity .3s,transform .3s;z-index:1}
+.hero:hover .hero-arrow{opacity:1;transform:translateY(-50%) translateX(5px)}
+
+/* ===== Cards Grid ===== */
+.cards-wrap{padding:2.5rem 2rem 3rem;max-width:1200px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{display:flex;flex-direction:column;gap:.5rem;padding:1.6rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;text-decoration:none;color:inherit;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.08);border-color:var(--accent)}
+body.bw .card:hover{box-shadow:0 8px 30px rgba(0,255,163,.06)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.card:hover::before{transform:scaleX(1)}
+.card-ico{font-size:2rem;line-height:1}
+.tag{display:inline-block;align-self:flex-start;font-family:'Space Mono',monospace;font-size:.55rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:.2rem .5rem;border:1px solid;border-radius:3px}
+.t-ai{color:var(--accent);border-color:rgba(0,184,118,.3);background:rgba(0,184,118,.06)}
+.t-ml{color:var(--accent2);border-color:rgba(123,97,255,.3);background:rgba(123,97,255,.06)}
+.t-rpa{color:#ff9f43;border-color:rgba(255,159,67,.3);background:rgba(255,159,67,.06)}
+.t-llm{color:#00d2ff;border-color:rgba(0,210,255,.3);background:rgba(0,210,255,.06)}
+.t-vis{color:var(--danger);border-color:rgba(255,68,102,.3);background:rgba(255,68,102,.06)}
+.card h3{font-size:1.05rem;font-weight:800;line-height:1.2}
+.card p{color:var(--muted);font-size:.8rem;line-height:1.5;flex:1}
+.card-go{font-family:'Space Mono',monospace;font-size:.68rem;font-weight:700;color:var(--accent);transition:letter-spacing .2s}
+.card:hover .card-go{letter-spacing:.06em}
+
+/* ===== Footer ===== */
+footer{border-top:1px solid var(--border);padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+footer small{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--muted)}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* ===== Responsive ===== */
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.nav-ctx{display:none}.hero{min-height:200px;padding:2rem 1.5rem}.hero-body h1{font-size:1.4rem}.hero-arrow{display:none}.cards-wrap{padding:1.5rem 1rem}.grid{grid-template-columns:1fr}footer{flex-direction:column;text-align:center}}
 </style>
-<script>
-  // Clear any stale theme from old versions so default is always white
-  (function() {
-    var t = localStorage.getItem('theme');
-    if (t && t !== 'dark' && t !== 'light') localStorage.removeItem('theme');
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.className = 'dark-requested';
-    }
-  })();
-</script>
 </head>
-<body style="background:#ffffff;color:#111111;">
+<body>
 
 <nav>
-  <a href="#" class="logo">Automation<span>Pulse</span></a>
-  <ul class="nav-links">
-    <li><a href="#featured">Latest</a></li>
-    <li><a href="#posts">Articles</a></li>
-    <li><a href="#write">Write</a></li>
-  </ul>
+  <div class="nav-brand">
+    <a href="#" class="logo">Automation<span>Pulse</span></a>
+    <div class="nav-ctx">
+      <b><em>AI News</em> · QA Engineers · Automation Pulse</b>
+      <small>Latest AI &amp; automation news — powered by artificialintelligence-news.com</small>
+    </div>
+  </div>
   <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" title="Toggle Black & White">◐</button>
-    <button class="nav-btn" onclick="document.getElementById('write').scrollIntoView({behavior:'smooth'})">+ New Post</button>
+    <button class="theme-btn" id="themeToggle" title="Toggle Dark Mode">◐</button>
   </div>
 </nav>
 
-<section class="hero">
-  <h1>
-    <em>AI Updates</em><br>
-    <span class="line2">QA Engineers</span><br>
-    Automation Engineer
-  </h1>
-  <p class="hero-sub">Deep dives into LLMs, RPA, MLOps, AI agents, and the tools shaping automation.</p>
-  <div class="hero-actions">
-    <a href="#featured" class="btn-primary">Explore Articles</a>
-    <a href="#write" class="btn-outline">Contribute</a>
-  </div>
-  <div class="hero-stats">
-    <div class="stat">
-      <span class="stat-num" id="postCount">0</span>
-      <span class="stat-label">Articles</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">12K+</span>
-      <span class="stat-label">Readers</span>
-    </div>
-  </div>
-</section>
+<div class="page">
 
-<main class="main">
-
-  <section id="featured">
-    <div class="section-header">
-      <div>
-        <div class="section-label">Featured</div>
-        <div class="section-title">Top Stories</div>
-      </div>
+  <a href="https://www.artificialintelligence-news.com/" target="_blank" class="hero">
+    <div class="hero-badge">LIVE</div>
+    <div class="hero-body">
+      <h1>Artificial Intelligence News</h1>
+      <p>Your go-to source for the latest AI, ML, NLP, Robotics &amp; Automation news — click to open →</p>
     </div>
-    <div class="featured-grid" id="featuredGrid">
-      <div class="loading-msg">Loading articles…</div>
+    <div class="hero-arrow">↗</div>
+  </a>
+
+  <section class="cards-wrap">
+    <div class="grid">
+
+      <a href="https://www.artificialintelligence-news.com/categories/ai/" target="_blank" class="card">
+        <div class="card-ico">🤖</div>
+        <span class="tag t-ai">AI</span>
+        <h3>Artificial Intelligence</h3>
+        <p>Latest breakthroughs in AI research, models, and real-world applications.</p>
+        <span class="card-go">Read articles →</span>
+      </a>
+
+      <a href="https://www.artificialintelligence-news.com/categories/machine-learning/" target="_blank" class="card">
+        <div class="card-ico">🧠</div>
+        <span class="tag t-ml">ML</span>
+        <h3>Machine Learning</h3>
+        <p>Deep learning, neural networks, MLOps, and model training insights.</p>
+        <span class="card-go">Read articles →</span>
+      </a>
+
+      <a href="https://www.artificialintelligence-news.com/categories/natural-language-processing/" target="_blank" class="card">
+        <div class="card-ico">💬</div>
+        <span class="tag t-llm">NLP / LLMs</span>
+        <h3>Natural Language Processing</h3>
+        <p>GPT, LLMs, chatbots, and language model developments.</p>
+        <span class="card-go">Read articles →</span>
+      </a>
+
+      <a href="https://www.artificialintelligence-news.com/categories/computer-vision/" target="_blank" class="card">
+        <div class="card-ico">👁️</div>
+        <span class="tag t-vis">Vision</span>
+        <h3>Computer Vision</h3>
+        <p>Image recognition, video analysis, autonomous systems, and visual AI.</p>
+        <span class="card-go">Read articles →</span>
+      </a>
+
+      <a href="https://www.artificialintelligence-news.com/categories/robotics/" target="_blank" class="card">
+        <div class="card-ico">🦾</div>
+        <span class="tag t-rpa">Robotics</span>
+        <h3>Robotics &amp; Automation</h3>
+        <p>RPA, industrial automation, robotic systems, and process automation.</p>
+        <span class="card-go">Read articles →</span>
+      </a>
+
+      <a href="https://www.artificialintelligence-news.com/categories/ethics/" target="_blank" class="card">
+        <div class="card-ico">⚖️</div>
+        <span class="tag t-ml">Ethics</span>
+        <h3>AI Ethics &amp; Regulation</h3>
+        <p>AI governance, bias, safety, and regulatory developments worldwide.</p>
+        <span class="card-go">Read articles →</span>
+      </a>
+
     </div>
   </section>
 
-  <section id="posts" style="margin-top:3rem;">
-    <div class="section-header">
-      <div>
-        <div class="section-label">All Articles</div>
-        <div class="section-title">Browse by Topic</div>
-      </div>
-    </div>
-    <div class="categories" id="cats">
-      <button class="cat-pill active" onclick="filterPosts('all',this)">All Topics</button>
-      <button class="cat-pill" onclick="filterPosts('ai',this)">AI / ML</button>
-      <button class="cat-pill" onclick="filterPosts('rpa',this)">RPA</button>
-      <button class="cat-pill" onclick="filterPosts('llm',this)">LLMs</button>
-      <button class="cat-pill" onclick="filterPosts('devops',this)">MLOps</button>
-      <button class="cat-pill" onclick="filterPosts('ml',this)">Computer Vision</button>
-    </div>
-    <div class="blog-grid" id="blogGrid">
-      <div class="loading-msg">Loading articles…</div>
-    </div>
-  </section>
-
-  <section class="write-section" id="write">
-    <h2>Publish Your Insight</h2>
-    <p>Share your expertise with the automation engineering community.</p>
-    <form class="write-form" onsubmit="submitPost(event)">
-      <div class="form-row">
-        <div class="form-field">
-          <label for="authorName">Your Name</label>
-          <input type="text" id="authorName" placeholder="e.g. Anika Sharma" required>
-        </div>
-        <div class="form-field">
-          <label for="postTitle">Article Title</label>
-          <input type="text" id="postTitle" placeholder="e.g. LangChain Agents in Production" required>
-        </div>
-      </div>
-      <div class="form-field">
-        <label for="postExcerpt">Excerpt / Subtitle</label>
-        <input type="text" id="postExcerpt" placeholder="One-line summary…" required>
-      </div>
-      <div class="form-field">
-        <label for="postContent">Content</label>
-        <textarea id="postContent" placeholder="Write your full article content here…" required></textarea>
-      </div>
-      <div class="form-field">
-        <label>Category</label>
-        <div class="tag-selector" id="tagSelector">
-          <button type="button" class="tag-btn active" data-tag="ai" onclick="selectTag(this)">AI / ML</button>
-          <button type="button" class="tag-btn" data-tag="rpa" onclick="selectTag(this)">RPA</button>
-          <button type="button" class="tag-btn" data-tag="llm" onclick="selectTag(this)">LLMs</button>
-          <button type="button" class="tag-btn" data-tag="devops" onclick="selectTag(this)">MLOps</button>
-          <button type="button" class="tag-btn" data-tag="ml" onclick="selectTag(this)">Computer Vision</button>
-        </div>
-      </div>
-      <div>
-        <button type="submit" class="btn-primary" id="submitBtn">Publish Article →</button>
-      </div>
-    </form>
-  </section>
-
-</main>
-
-<footer>
-  <a href="#" class="logo">Auto<span>Pulse</span></a>
-  <span class="footer-copy">© 2025 AutoPulse. Built for engineers.</span>
-</footer>
-
-<div class="modal-overlay" id="modal" onclick="closeModalOverlay(event)">
-  <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">✕</button>
-    <div id="modalInner"></div>
-  </div>
 </div>
 
-<div class="success-toast" id="toast">✓ Article published successfully!</div>
+<footer>
+  <a href="#" class="logo">Automation<span>Pulse</span></a>
+  <small>© 2025 QA Auto Plus — AI news sourced from <a href="https://www.artificialintelligence-news.com/" target="_blank">artificialintelligence-news.com</a></small>
+</footer>
 
-<script src="js/ai-automation-blog.js"></script>
+<script>
+(function(){
+  var btn=document.getElementById('themeToggle');
+  var s=localStorage.getItem('theme');
+  if(s&&s!=='dark'&&s!=='light')localStorage.removeItem('theme');
+  if(localStorage.getItem('theme')==='dark')document.body.classList.add('bw');
+  btn.addEventListener('click',function(){
+    document.body.classList.toggle('bw');
+    localStorage.setItem('theme',document.body.classList.contains('bw')?'dark':'light');
+  });
+})();
+</script>
 </body>
 </html>
-

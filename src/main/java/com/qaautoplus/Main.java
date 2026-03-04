@@ -5,8 +5,7 @@ import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import com.qaautoplus.servlets.HomeServlet;
-import com.qaautoplus.servlets.ApiServlet;
-import com.qaautoplus.db.DatabaseConfig;
+import com.qaautoplus.servlets.BlogServlet;
 
 import java.net.URL;
 import java.nio.file.Files;
@@ -46,9 +45,6 @@ public class Main {
 
         Server server = new Server(port);
 
-        // Initialize Neon PostgreSQL database
-        DatabaseConfig.initialize();
-
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
         server.setHandler(context);
@@ -59,7 +55,7 @@ public class Main {
 
         // Register servlets
         context.addServlet(new ServletHolder(new HomeServlet()), "/home");
-        context.addServlet(new ServletHolder(new ApiServlet()), "/api/*");
+        context.addServlet(new ServletHolder(new BlogServlet()), "/blog");
 
         // Default servlet serves static files (css, js, html, blog page, etc.)
         ServletHolder defaultHolder = new ServletHolder("default", DefaultServlet.class);
@@ -73,9 +69,7 @@ public class Main {
             System.out.println("============================================");
             System.out.println("  Port       : " + port + (envPort != null ? "  (from PORT env)" : "  (default)"));
             System.out.println("  Home page  : http://localhost:" + port + "/home");
-            System.out.println("  Blog page  : http://localhost:" + port + "/blog/ai-automation-blog.html");
-            System.out.println("  API status : http://localhost:" + port + "/api/status");
-            System.out.println("  API info   : http://localhost:" + port + "/api/info");
+            System.out.println("  Blog page  : http://localhost:" + port + "/blog");
             System.out.println("============================================");
             System.out.println("  Press Ctrl+C to stop the server.");
             System.out.println("============================================");
@@ -112,4 +106,3 @@ public class Main {
         return ".";
     }
 }
-

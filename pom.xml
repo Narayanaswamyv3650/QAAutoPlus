@@ -17,7 +17,6 @@
         <maven.compiler.target>20</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jetty.version>11.0.15</jetty.version>
-        <jackson.version>2.15.2</jackson.version>
     </properties>
 
     <dependencies>
@@ -28,19 +27,6 @@
             <version>6.0.0</version>
         </dependency>
 
-        <!-- PostgreSQL JDBC Driver (Neon DB) -->
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.7.3</version>
-        </dependency>
-
-        <!-- HikariCP Connection Pool -->
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>5.1.0</version>
-        </dependency>
 
         <!-- Jetty Server for embedded web server -->
         <dependency>
@@ -59,17 +45,6 @@
             <version>${jetty.version}</version>
         </dependency>
 
-        <!-- Jackson for JSON processing -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
 
         <!-- JUnit for testing -->
         <dependency>
