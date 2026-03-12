@@ -6,6 +6,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import com.qaautoplus.servlets.HomeServlet;
 import com.qaautoplus.servlets.BlogServlet;
+import com.qaautoplus.servlets.ApiServlet;
 
 import java.net.URL;
 import java.nio.file.Files;
@@ -56,6 +57,7 @@ public class Main {
         // Register servlets
         context.addServlet(new ServletHolder(new HomeServlet()), "/home");
         context.addServlet(new ServletHolder(new BlogServlet()), "/blog");
+        context.addServlet(new ServletHolder(new ApiServlet()), "/api/*");
 
         // Default servlet serves static files (css, js, html, blog page, etc.)
         ServletHolder defaultHolder = new ServletHolder("default", DefaultServlet.class);
@@ -65,11 +67,14 @@ public class Main {
         try {
             server.start();
             System.out.println("============================================");
-            System.out.println("  QA Auto Plus server started successfully!");
+            System.out.println("  QAAutoPlus — Tech News for QA Engineers");
             System.out.println("============================================");
             System.out.println("  Port       : " + port + (envPort != null ? "  (from PORT env)" : "  (default)"));
             System.out.println("  Home page  : http://localhost:" + port + "/home");
-            System.out.println("  Blog page  : http://localhost:" + port + "/blog");
+            System.out.println("  Explore    : http://localhost:" + port + "/blog");
+            System.out.println("  Live News  : http://localhost:" + port + "/api/news");
+            System.out.println("  Trending   : http://localhost:" + port + "/api/trending");
+            System.out.println("  Subscribe  : POST http://localhost:" + port + "/api/subscribe");
             System.out.println("============================================");
             System.out.println("  Press Ctrl+C to stop the server.");
             System.out.println("============================================");

@@ -1,0 +1,426 @@
+{
+  "site": {
+    "name": "QAAutoPlus",
+    "tagline": "Tech News for QA & Automation Engineers",
+    "description": "Breaking tech news, AI insights, and automation trends — curated for QA and software engineers.",
+    "copyright": "© 2026 QAAutoPlus. All rights reserved.",
+    "referenceSource": "https://techcrunch.com/"
+  },
+  "navigation": [
+    { "label": "Home", "url": "/home", "active": true },
+    { "label": "AI", "url": "/home#ai", "active": false },
+    { "label": "Startups", "url": "/home#startups", "active": false },
+    { "label": "Apps", "url": "/home#apps", "active": false },
+    { "label": "Security", "url": "/home#security", "active": false },
+    { "label": "More", "url": "/blog", "active": false }
+  ],
+  "hero": {
+    "badge": "FEATURED",
+    "title": "The Future of AI-Powered Testing",
+    "subtitle": "How artificial intelligence is revolutionizing quality assurance and test automation across the industry",
+    "category": "AI & AUTOMATION",
+    "author": "QAAutoPlus Editorial",
+    "date": "March 2026",
+    "url": "https://techcrunch.com/category/artificial-intelligence/",
+    "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80"
+  },
+  "trending": [
+    {
+      "title": "Google DeepMind unveils next-gen AI model with reasoning capabilities",
+      "url": "https://techcrunch.com/category/artificial-intelligence/",
+      "category": "AI",
+      "time": "2h ago"
+    },
+    {
+      "title": "OpenAI launches GPT-5 with multimodal understanding",
+      "url": "https://techcrunch.com/category/artificial-intelligence/",
+      "category": "AI",
+      "time": "4h ago"
+    },
+    {
+      "title": "GitHub Copilot now writes full test suites automatically",
+      "url": "https://github.blog/",
+      "category": "DevTools",
+      "time": "8h ago"
+    },
+    {
+      "title": "New cybersecurity framework targets AI-generated code vulnerabilities",
+      "url": "https://techcrunch.com/category/security/",
+      "category": "Security",
+      "time": "10h ago"
+    }
+  ],
+  "categories": [
+    {
+      "id": "ai",
+      "name": "Artificial Intelligence",
+      "shortName": "AI",
+      "icon": "🤖",
+      "color": "#4F46E5",
+      "url": "https://techcrunch.com/category/artificial-intelligence/",
+      "description": "Latest breakthroughs in AI research, models, and real-world applications.",
+      "articles": [
+        {
+          "title": "How AI is Transforming Software Testing in 2026",
+          "excerpt": "AI-driven testing tools are reducing test creation time by 80% while improving coverage across complex applications.",
+          "url": "https://techcrunch.com/category/artificial-intelligence/",
+          "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80",
+          "author": "QAAutoPlus",
+          "date": "Mar 11, 2026",
+          "readTime": "5 min read"
+        },
+        {
+          "title": "GPT-5 and the Future of Code Generation",
+          "excerpt": "OpenAI's latest model can generate production-ready code with comprehensive test suites built in.",
+          "url": "https://techcrunch.com/category/artificial-intelligence/",
+          "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80",
+          "author": "QAAutoPlus",
+          "date": "Mar 10, 2026",
+          "readTime": "7 min read"
+        },
+        {
+          "title": "DeepMind's AlphaTest: AI That Finds Bugs Before You Write Code",
+          "excerpt": "Google's latest AI model predicts software defects during the design phase with 94% accuracy.",
+          "url": "https://techcrunch.com/category/artificial-intelligence/",
+          "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
+          "author": "QAAutoPlus",
+          "date": "Mar 9, 2026",
+          "readTime": "6 min read"
+        }
+      ]
+    },
+    {
+      "id": "ml",
+      "name": "Machine Learning",
+      "shortName": "ML",
+      "icon": "🧠",
+      "color": "#7C3AED",
+      "url": "https://news.mit.edu/topic/machine-learning",
+      "description": "Deep learning, neural networks, MLOps, and model training insights from MIT.",
+      "articles": [
+        {
+          "title": "MIT Researchers Develop Self-Healing Neural Networks",
+          "excerpt": "New architecture allows ML models to detect and correct their own biases during inference.",
+          "url": "https://news.mit.edu/topic/machine-learning",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+          "author": "MIT News",
+          "date": "Mar 11, 2026",
+          "readTime": "8 min read"
+        },
+        {
+          "title": "Transfer Learning Breakthrough Reduces Training Data by 95%",
+          "excerpt": "A new technique enables enterprise ML models to achieve accuracy with fraction of usual data requirements.",
+          "url": "https://news.mit.edu/topic/machine-learning",
+          "image": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&q=80",
+          "author": "MIT News",
+          "date": "Mar 10, 2026",
+          "readTime": "6 min read"
+        },
+        {
+          "title": "MLOps 2.0: Automating the Entire Model Lifecycle",
+          "excerpt": "New frameworks promise to automate model deployment, monitoring, and retraining in production environments.",
+          "url": "https://news.mit.edu/topic/machine-learning",
+          "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
+          "author": "MIT News",
+          "date": "Mar 9, 2026",
+          "readTime": "5 min read"
+        }
+      ]
+    },
+    {
+      "id": "vision",
+      "name": "Computer Vision",
+      "shortName": "Vision",
+      "icon": "👁️",
+      "color": "#DC2626",
+      "url": "https://viso.ai/computer-vision/computer-vision-blogs/",
+      "description": "Image recognition, video analysis, autonomous systems, and visual AI.",
+      "articles": [
+        {
+          "title": "Visual Testing Revolution: AI-Powered UI Comparison",
+          "excerpt": "New tools use computer vision to detect pixel-level UI regressions across thousands of screenshots.",
+          "url": "https://viso.ai/computer-vision/computer-vision-blogs/",
+          "image": "https://images.unsplash.com/photo-1561736778-92e52a7769ef?w=600&q=80",
+          "author": "Viso.ai",
+          "date": "Mar 11, 2026",
+          "readTime": "4 min read"
+        },
+        {
+          "title": "Autonomous Vehicle Testing: The QA Challenge of 2026",
+          "excerpt": "How testing teams are validating self-driving AI systems that process millions of visual inputs per second.",
+          "url": "https://viso.ai/computer-vision/computer-vision-blogs/",
+          "image": "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80",
+          "author": "Viso.ai",
+          "date": "Mar 10, 2026",
+          "readTime": "7 min read"
+        },
+        {
+          "title": "Real-Time Object Detection Hits 99.5% Accuracy",
+          "excerpt": "Latest YOLO v10 model achieves near-perfect detection rates while running at 120fps on edge devices.",
+          "url": "https://viso.ai/computer-vision/computer-vision-blogs/",
+          "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80",
+          "author": "Viso.ai",
+          "date": "Mar 9, 2026",
+          "readTime": "5 min read"
+        }
+      ]
+    },
+    {
+      "id": "startups",
+      "name": "Startups & Funding",
+      "shortName": "Startups",
+      "icon": "🚀",
+      "color": "#EA580C",
+      "url": "https://techcrunch.com/category/startups/",
+      "description": "Startup launches, funding rounds, and emerging tech companies disrupting QA.",
+      "articles": [
+        {
+          "title": "TestAI Raises $120M Series C for AI Test Generation",
+          "excerpt": "The startup's platform generates comprehensive test suites from user stories using large language models.",
+          "url": "https://techcrunch.com/category/startups/",
+          "image": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 11, 2026",
+          "readTime": "4 min read"
+        },
+        {
+          "title": "QualityBot Exits Stealth with $50M to Automate Manual Testing",
+          "excerpt": "Former Google engineers build a platform that watches humans test and learns to replicate their workflows.",
+          "url": "https://techcrunch.com/category/startups/",
+          "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 10, 2026",
+          "readTime": "5 min read"
+        },
+        {
+          "title": "DevSecOps Startup CodeShield Hits $1B Valuation",
+          "excerpt": "AI-powered code security scanner used by 10,000+ companies reaches unicorn status after Series D.",
+          "url": "https://techcrunch.com/category/startups/",
+          "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 9, 2026",
+          "readTime": "3 min read"
+        }
+      ]
+    },
+    {
+      "id": "apps",
+      "name": "Apps & DevTools",
+      "shortName": "Apps",
+      "icon": "📱",
+      "color": "#0891B2",
+      "url": "https://techcrunch.com/category/apps/",
+      "description": "Developer tools, IDE plugins, testing frameworks, and productivity apps.",
+      "articles": [
+        {
+          "title": "VS Code 2026: Built-in AI Pair Programming Ships to All Users",
+          "excerpt": "Microsoft's code editor now includes native AI assistance for code writing, debugging, and test generation.",
+          "url": "https://techcrunch.com/category/apps/",
+          "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 11, 2026",
+          "readTime": "4 min read"
+        },
+        {
+          "title": "Playwright 2.0 Brings AI-Assisted Test Recording",
+          "excerpt": "Microsoft's testing framework can now generate resilient selectors using computer vision and DOM analysis.",
+          "url": "https://techcrunch.com/category/apps/",
+          "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 10, 2026",
+          "readTime": "6 min read"
+        },
+        {
+          "title": "JetBrains Launches Fleet 2.0 with Cloud-Native Testing",
+          "excerpt": "The next-gen IDE includes built-in cloud test execution across multiple browsers and devices.",
+          "url": "https://techcrunch.com/category/apps/",
+          "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 9, 2026",
+          "readTime": "5 min read"
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Security",
+      "shortName": "Security",
+      "icon": "🔒",
+      "color": "#059669",
+      "url": "https://techcrunch.com/category/security/",
+      "description": "Cybersecurity, pen testing, vulnerability research, and DevSecOps news.",
+      "articles": [
+        {
+          "title": "OWASP 2026: AI Injection Attacks Top the New List",
+          "excerpt": "Prompt injection and model manipulation attacks dominate the updated OWASP Top 10 for AI applications.",
+          "url": "https://techcrunch.com/category/security/",
+          "image": "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 11, 2026",
+          "readTime": "6 min read"
+        },
+        {
+          "title": "Automated Penetration Testing Goes Mainstream",
+          "excerpt": "AI-powered security testing tools can now simulate sophisticated attacks without human intervention.",
+          "url": "https://techcrunch.com/category/security/",
+          "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 10, 2026",
+          "readTime": "5 min read"
+        },
+        {
+          "title": "Zero-Trust Testing: Securing CI/CD Pipelines End-to-End",
+          "excerpt": "New frameworks ensure every stage of the build pipeline is verified, signed, and tamper-proof.",
+          "url": "https://techcrunch.com/category/security/",
+          "image": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 9, 2026",
+          "readTime": "4 min read"
+        }
+      ]
+    },
+    {
+      "id": "robotics",
+      "name": "Robotics & RPA",
+      "shortName": "Robotics",
+      "icon": "🦾",
+      "color": "#D97706",
+      "url": "https://techcrunch.com/category/robotics/",
+      "description": "RPA, industrial automation, robotic systems, and process automation.",
+      "articles": [
+        {
+          "title": "UiPath's AI Agents Can Now Handle Complex Multi-Step Workflows",
+          "excerpt": "Robotic process automation evolves with AI agents that understand context and make decisions.",
+          "url": "https://techcrunch.com/category/robotics/",
+          "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 11, 2026",
+          "readTime": "5 min read"
+        },
+        {
+          "title": "Boston Dynamics Opens Testing API for Robot Applications",
+          "excerpt": "Developers can now build and test robot behaviors in a cloud simulation before deploying to hardware.",
+          "url": "https://techcrunch.com/category/robotics/",
+          "image": "https://images.unsplash.com/photo-1531746790095-e5995f1a523b?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 10, 2026",
+          "readTime": "6 min read"
+        },
+        {
+          "title": "Warehouse Automation Testing: A $5B Opportunity",
+          "excerpt": "QA engineers are in high demand as warehouse robotics deployments scale globally.",
+          "url": "https://techcrunch.com/category/robotics/",
+          "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 9, 2026",
+          "readTime": "4 min read"
+        }
+      ]
+    },
+    {
+      "id": "ethics",
+      "name": "AI Ethics & Policy",
+      "shortName": "Ethics",
+      "icon": "⚖️",
+      "color": "#6D28D9",
+      "url": "https://techcrunch.com/tag/ai-ethics/",
+      "description": "AI governance, bias testing, safety, and regulatory developments worldwide.",
+      "articles": [
+        {
+          "title": "EU AI Act Enforcement Begins: What Testers Need to Know",
+          "excerpt": "New regulations require mandatory bias testing and fairness audits for high-risk AI systems.",
+          "url": "https://techcrunch.com/tag/ai-ethics/",
+          "image": "https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 11, 2026",
+          "readTime": "7 min read"
+        },
+        {
+          "title": "Testing for Bias: New Open-Source Framework Released",
+          "excerpt": "Facebook's Fairness Flow tool now available to all developers for detecting algorithmic bias.",
+          "url": "https://techcrunch.com/tag/ai-ethics/",
+          "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 10, 2026",
+          "readTime": "5 min read"
+        },
+        {
+          "title": "The Rise of AI Safety Testing as a Career Path",
+          "excerpt": "Companies are creating dedicated AI safety QA roles with salaries starting at $200K.",
+          "url": "https://techcrunch.com/tag/ai-ethics/",
+          "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80",
+          "author": "TechCrunch",
+          "date": "Mar 9, 2026",
+          "readTime": "4 min read"
+        }
+      ]
+    }
+  ],
+  "sidebar": {
+    "popularTopics": [
+      { "label": "Selenium", "url": "https://www.selenium.dev/blog/" },
+      { "label": "Playwright", "url": "https://playwright.dev/docs/release-notes" },
+      { "label": "Cypress", "url": "https://www.cypress.io/blog" },
+      { "label": "Appium", "url": "https://appium.io/docs/en/latest/" },
+      { "label": "JMeter", "url": "https://jmeter.apache.org/" },
+      { "label": "Postman", "url": "https://blog.postman.com/" },
+      { "label": "k6 Load Testing", "url": "https://k6.io/blog/" },
+      { "label": "Jenkins", "url": "https://www.jenkins.io/blog/" }
+    ],
+    "newsletters": {
+      "title": "QAAutoPlus Weekly",
+      "description": "Get the best of tech news for QA engineers delivered to your inbox every week."
+    }
+  },
+  "footer": {
+    "sections": [
+      {
+        "title": "Categories",
+        "links": [
+          { "label": "Artificial Intelligence", "url": "https://techcrunch.com/category/artificial-intelligence/" },
+          { "label": "Machine Learning", "url": "https://news.mit.edu/topic/machine-learning" },
+          { "label": "Computer Vision", "url": "https://viso.ai/computer-vision/computer-vision-blogs/" },
+          { "label": "Startups", "url": "https://techcrunch.com/category/startups/" },
+          { "label": "Security", "url": "https://techcrunch.com/category/security/" }
+        ]
+      },
+      {
+        "title": "Testing Tools",
+        "links": [
+          { "label": "Selenium", "url": "https://www.selenium.dev/" },
+          { "label": "Playwright", "url": "https://playwright.dev/" },
+          { "label": "Cypress", "url": "https://www.cypress.io/" },
+          { "label": "Appium", "url": "https://appium.io/" },
+          { "label": "Postman", "url": "https://www.postman.com/" }
+        ]
+      },
+      {
+        "title": "Resources",
+        "links": [
+          { "label": "TechCrunch", "url": "https://techcrunch.com/" },
+          { "label": "MIT Tech Review", "url": "https://www.technologyreview.com/" },
+          { "label": "Ars Technica", "url": "https://arstechnica.com/" },
+          { "label": "The Verge", "url": "https://www.theverge.com/" },
+          { "label": "Wired", "url": "https://www.wired.com/" }
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          { "label": "About", "url": "#" },
+          { "label": "Contact", "url": "#" },
+          { "label": "Advertise", "url": "#" },
+          { "label": "Privacy Policy", "url": "#" },
+          { "label": "Terms of Service", "url": "#" }
+        ]
+      }
+    ],
+    "social": [
+      { "label": "Twitter", "url": "#", "icon": "𝕏" },
+      { "label": "LinkedIn", "url": "#", "icon": "in" },
+      { "label": "GitHub", "url": "#", "icon": "⌥" },
+      { "label": "RSS", "url": "#", "icon": "◉" }
+    ]
+  }
+}
+
